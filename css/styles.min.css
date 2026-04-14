@@ -372,7 +372,59 @@
     border-radius: 50%;
     animation: sparkleAnim 2s infinite ease-in-out;
 }
+.wishes-section {
+    padding: 50px 20px;
+    text-align: center;
+}
 
+.wishes-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wishes-form input,
+.wishes-form textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.wishes-form button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.wishes-list {
+    margin-top: 30px;
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+.wish-card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.wish-name {
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+.wish-message {
+    margin-top: 5px;
+}
 /* MULTIPLE POSITIONS */
 
 .sparkles::before {
