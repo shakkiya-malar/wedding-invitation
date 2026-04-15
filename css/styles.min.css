@@ -537,7 +537,24 @@
 
     position: relative;
 }
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.wish-status {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
 
+.wish-status.success {
+    color: #16a34a;
+}
+
+.wish-status.error {
+    color: #dc2626;
+}
 /* ✨ underline glow */
 .kavidhai-heading::after {
     content: "";

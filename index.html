@@ -455,16 +455,17 @@
 
     <h3>💌 Send Your Wishes</h3>
 
-    <div class="wishes-form">
-        <input type="text" id="name" placeholder="Your Name" />
-        <textarea id="message" placeholder="Your Wishes"></textarea>
+    <<form id="wishForm" class="wishes-form">
+    <input type="text" id="name" placeholder="Your Name" />
+    <textarea id="message" placeholder="Your Wishes"></textarea>
 
-<button id="submitWishBtn">Send 💖</button>
-    </div>
+    <button type="button" id="submitWishBtn">Send 💖</button>
 
+</form>
     <div class="wishes-list" id="wishesList"></div>
 
 </section>
+<p id="wishStatus" class="wish-status"></p>
 <!-- <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
          data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
