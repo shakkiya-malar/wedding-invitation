@@ -520,7 +520,36 @@
 .wish-card {
     animation: fadeUp 0.6s ease forwards;
 }
+.kavidhai-heading {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 
+    /* GOLD GRADIENT TEXT */
+    background: linear-gradient(135deg, #f9d976, #f39f86, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    position: relative;
+}
+
+/* ✨ underline glow */
+.kavidhai-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin: 8px auto 0;
+
+    background: linear-gradient(90deg, #ffd700, #f39f86);
+
+    border-radius: 10px;
+}
 @keyframes fadeUp {
     from {
         opacity: 0;
