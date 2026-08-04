@@ -48,8 +48,8 @@ body.cover-locked {
   width: 50%;
   height: 100%;
   background-color: #f7efe2;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, rgba(240,225,200,0.2) 100%),
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(240, 225, 200, 0.2) 100%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='240' viewBox='0 0 160 240'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c87a74' fill-opacity='0.28'%3E%3Cpath d='M80 30c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5zM40 130c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5zM120 130c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5z'/%3E%3C/g%3E%3Cg fill='%236b8e61' fill-opacity='0.28'%3E%3Cpath d='M80 80c-20 10-30 30-20 45s30 0 20-45zm-40 10c-15 8-22 22-15 33s22 0 15-33zm80 0c-15 8-22 22-15 33s22 0 15-33z'/%3E%3C/g%3E%3Cg fill='%23b8860b' fill-opacity='0.18'%3E%3Ccircle cx='80' cy='30' r='5'/%3E%3Ccircle cx='40' cy='130' r='5'/%3E%3Ccircle cx='120' cy='130' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 180px 270px;
@@ -127,10 +127,28 @@ body.cover-locked {
   opacity: 0.85;
 }
 
-.corner-top-left { top: 12px; left: 12px; }
-.corner-top-right { top: 12px; right: 12px; transform: scaleX(-1); }
-.corner-bottom-left { bottom: 12px; left: 12px; transform: scaleY(-1); }
-.corner-bottom-right { bottom: 12px; right: 12px; transform: scale(-1); }
+.corner-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.corner-top-right {
+  top: 12px;
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+.corner-bottom-left {
+  bottom: 12px;
+  left: 12px;
+  transform: scaleY(-1);
+}
+
+.corner-bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transform: scale(-1);
+}
 
 /* Center Shadow Effect along the fold split */
 .left-door::after {
@@ -140,7 +158,7 @@ body.cover-locked {
   right: 0;
   width: 30px;
   height: 100%;
-  background: linear-gradient(to left, rgba(0,0,0,0.25), transparent);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
   pointer-events: none;
 }
 
@@ -151,7 +169,7 @@ body.cover-locked {
   left: 0;
   width: 30px;
   height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.25), transparent);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
   pointer-events: none;
 }
 
@@ -184,11 +202,11 @@ body.cover-locked {
   background: linear-gradient(145deg, #1b261d 0%, #29382b 45%, #152017 100%);
   border: 3px solid #d4af37;
   border-radius: 50px / 30px;
-  box-shadow: 
-    0 10px 30px rgba(0,0,0,0.6),
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
     0 0 20px rgba(212, 175, 55, 0.4),
-    inset 0 2px 4px rgba(255,255,255,0.3),
-    inset 0 -3px 6px rgba(0,0,0,0.8);
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.8);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -218,21 +236,27 @@ body.cover-locked {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 40%,
-    rgba(255, 235, 170, 0.25) 50%,
-    transparent 60%
-  );
+  background: linear-gradient(45deg,
+      transparent 40%,
+      rgba(255, 235, 170, 0.25) 50%,
+      transparent 60%);
   transform: rotate(25deg);
   animation: metallicShimmer 3.5s infinite;
   pointer-events: none;
 }
 
 @keyframes metallicShimmer {
-  0% { transform: translateX(-100%) rotate(25deg); }
-  20% { transform: translateX(100%) rotate(25deg); }
-  100% { transform: translateX(100%) rotate(25deg); }
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+
+  20% {
+    transform: translateX(100%) rotate(25deg);
+  }
+
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
 }
 
 /* Badge Typography */
@@ -243,7 +267,7 @@ body.cover-locked {
   color: #e5c158;
   text-transform: uppercase;
   margin-bottom: 4px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .seal-main-title {
@@ -256,7 +280,7 @@ body.cover-locked {
   background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
   margin: 6px 0;
   white-space: nowrap;
 }
@@ -284,7 +308,7 @@ body.cover-locked {
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.6);
   animation: pulseGlow 2s infinite alternate;
 }
 
@@ -294,11 +318,12 @@ body.cover-locked {
 
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), inset 0 1px 2px rgba(255,255,255,0.6);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.6);
     transform: scale(1);
   }
+
   100% {
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.9), inset 0 1px 2px rgba(255,255,255,0.8);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.8);
     transform: scale(1.04);
   }
 }
@@ -334,7 +359,7 @@ body.cover-locked {
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -356,20 +381,20 @@ body.cover-locked {
     min-width: 240px;
     padding: 18px 24px;
   }
-  
+
   .seal-main-title {
     font-size: 18px;
   }
-  
+
   .seal-main-title span.weds {
     font-size: 16px;
   }
-  
+
   .seal-top-text {
     font-size: 9px;
     letter-spacing: 2px;
   }
-  
+
   .seal-action-button {
     font-size: 9px;
     padding: 5px 14px;
@@ -416,7 +441,7 @@ body.cover-locked {
   border-radius: 16px;
   background: linear-gradient(135deg, #fffaf4 0%, #fdf3e7 50%, #f7efe2 100%);
   border: 3px solid #e8ca6f;
-  box-shadow: 
+  box-shadow:
     0 12px 30px rgba(55, 36, 40, 0.15),
     0 0 20px rgba(232, 202, 111, 0.4),
     inset 0 0 10px rgba(232, 202, 111, 0.25);
@@ -434,6 +459,7 @@ body.cover-locked {
     box-shadow: 0 12px 30px rgba(55, 36, 40, 0.15), 0 0 20px rgba(232, 202, 111, 0.6);
     transform: scale(1);
   }
+
   100% {
     box-shadow: 0 16px 40px rgba(232, 202, 111, 0.9), 0 0 35px rgba(211, 181, 106, 1);
     transform: scale(1.03);
@@ -524,7 +550,7 @@ body.cover-locked {
   border-radius: 16px !important;
   text-align: center !important;
   border: 2px solid #e8ca6f !important;
-  box-shadow: 
+  box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.35),
     0 0 20px rgba(232, 202, 111, 0.3),
     inset 0 0 12px rgba(232, 202, 111, 0.2) !important;
@@ -534,7 +560,7 @@ body.cover-locked {
 
 .count-box:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 
+  box-shadow:
     0 16px 35px rgba(0, 0, 0, 0.45),
     0 0 28px rgba(232, 202, 111, 0.6),
     inset 0 0 15px rgba(232, 202, 111, 0.3) !important;
@@ -583,374 +609,373 @@ body.cover-locked {
     margin-top: 20px;
     margin-bottom: 25px;
   }
-  
+
   .count-box {
     padding: 14px 6px !important;
     border-radius: 12px !important;
   }
-  
+
   .count-box h2 {
     font-size: 24px !important;
   }
-  
+
   .count-box p {
     font-size: 9px !important;
     letter-spacing: 1px !important;
     margin-top: 3px !important;
   }
-/* ==========================================
+
+  /* ==========================================
    PREMIUM ROYAL KAVIDHAI CARD STYLES
    ========================================== */
-/* ==========================================
+  /* ==========================================
    PREMIUM ROYAL KAVIDHAI CARD STYLES
    ========================================== */
-.kavidhai-heading {
-  text-align: center !important;
-  font-family: 'Cinzel', 'Playfair Display', serif !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  letter-spacing: 3px !important;
-  text-transform: uppercase !important;
-  color: #372428 !important;
-  -webkit-text-fill-color: #372428 !important;
-  background: none !important;
-  margin-bottom: 25px !important;
-  text-shadow: 0 1px 2px rgba(232, 202, 111, 0.4) !important;
-}
-
-.kavidhai-heading::after {
-  content: "" !important;
-  display: block !important;
-  width: 100px !important;
-  height: 2px !important;
-  margin: 10px auto 0 !important;
-  background: linear-gradient(90deg, transparent, #e8ca6f, #d3b56a, transparent) !important;
-  box-shadow: 0 0 8px rgba(232, 202, 111, 0.8) !important;
-}
-
-.kavidhai-section {
-  display: flex !important;
-  justify-content: center !important;
-  padding: 20px 15px 50px 15px !important;
-}
-
-.kavidhai-card {
-  position: relative !important;
-  max-width: 520px !important;
-  width: 100% !important;
-  padding: 40px 30px !important;
-  border-radius: 20px !important;
-  background: linear-gradient(145deg, #1b261d 0%, #29382b 50%, #152017 100%) !important;
-  border: 2px solid #e8ca6f !important;
-  box-shadow: 
-    0 15px 40px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(232, 202, 111, 0.3),
-    inset 0 0 15px rgba(232, 202, 111, 0.2) !important;
-  text-align: center !important;
-  overflow: hidden !important;
-  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
-}
-
-.kavidhai-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 
-    0 20px 45px rgba(0, 0, 0, 0.5),
-    0 0 35px rgba(232, 202, 111, 0.5),
-    inset 0 0 20px rgba(232, 202, 111, 0.3) !important;
-}
-
-/* Filigree Inner Line for Kavidhai Card */
-.kavidhai-card::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 6px !important;
-  bottom: 6px !important;
-  left: 6px !important;
-  right: 6px !important;
-  border: 1px dashed rgba(232, 202, 111, 0.4) !important;
-  border-radius: 15px !important;
-  pointer-events: none !important;
-  padding: 0 !important;
-  background: none !important;
-  mask-composite: normal !important;
-}
-
-.kavidhai-text {
-  font-family: 'Mukta Malar', 'Catamaran', 'Segoe UI', serif !important;
-  font-size: 16px !important;
-  line-height: 2 !important;
-  color: #fff6d6 !important;
-  margin: 0 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
-}
-
-.kavidhai-text .line.highlight {
-  font-family: 'Cinzel', 'Playfair Display', serif !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  color: #e8ca6f !important;
-  background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  letter-spacing: 2px !important;
-  display: inline-block !important;
-  margin-top: 10px !important;
-  filter: drop-shadow(0 2px 6px rgba(232, 202, 111, 0.5)) !important;
-}
-
-.kavidhai-text .line.signature {
-  font-family: 'Great Vibes', cursive !important;
-  font-size: 24px !important;
-  color: #ff758f !important;
-  display: inline-block !important;
-  margin-top: 8px !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
-}
-
-/* ==========================================
-   PREMIUM RIGHT-CORNER MUSIC PLAYER STYLES
-   ========================================== */
-#musicPlayer {
-  position: fixed !important;
-  bottom: 25px !important;
-  right: 25px !important;
-  z-index: 99999 !important;
-  background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
-  border: 2px solid #e8ca6f !important;
-  border-radius: 35px !important;
-  padding: 8px 14px 8px 18px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(232, 202, 111, 0.35) !important;
-  backdrop-filter: blur(10px) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  color: #fff6d6 !important;
-}
-
-#musicPlayer:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 
-    0 14px 35px rgba(0, 0, 0, 0.5),
-    0 0 28px rgba(232, 202, 111, 0.6) !important;
-}
-
-.music-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.music-note-icon {
-  color: #e8ca6f;
-  font-size: 14px;
-}
-
-.song-title {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: #fff6d6;
-  letter-spacing: 1px;
-  max-width: 110px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#musicPlayer button {
-  background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
-  color: #1b261d !important;
-  border: none !important;
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 13px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-  transition: all 0.25s ease !important;
-  padding: 0 !important;
-}
-
-#musicPlayer button:hover {
-  transform: scale(1.1) !important;
-  background: #ffffff !important;
-  color: #1b261d !important;
-  box-shadow: 0 0 15px rgba(232, 202, 111, 0.8) !important;
-}
-
-#musicPlayer button:active {
-  transform: scale(0.95) !important;
-}
-
-/* Mobile responsive music player & kavidhai card adjustments */
-@media (max-width: 768px) {
-  #musicPlayer {
-    bottom: 20px !important;
-    right: 15px !important;
-    padding: 6px 10px 6px 14px !important;
-    gap: 8px !important;
+  .kavidhai-heading {
+    text-align: center !important;
+    font-family: 'Cinzel', 'Playfair Display', serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: #372428 !important;
+    -webkit-text-fill-color: #372428 !important;
+    background: none !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0 1px 2px rgba(232, 202, 111, 0.4) !important;
   }
-  
-  .song-title {
-    max-width: 80px;
-    font-size: 10px;
+
+  .kavidhai-heading::after {
+    content: "" !important;
+    display: block !important;
+    width: 100px !important;
+    height: 2px !important;
+    margin: 10px auto 0 !important;
+    background: linear-gradient(90deg, transparent, #e8ca6f, #d3b56a, transparent) !important;
+    box-shadow: 0 0 8px rgba(232, 202, 111, 0.8) !important;
   }
-  
-  #musicPlayer button {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 11px !important;
+
+  .kavidhai-section {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 20px 15px 50px 15px !important;
   }
 
   .kavidhai-card {
-    padding: 25px 18px !important;
+    position: relative !important;
+    max-width: 520px !important;
+    width: 100% !important;
+    padding: 40px 30px !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, #1b261d 0%, #29382b 50%, #152017 100%) !important;
+    border: 2px solid #e8ca6f !important;
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.4),
+      0 0 25px rgba(232, 202, 111, 0.3),
+      inset 0 0 15px rgba(232, 202, 111, 0.2) !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+  }
+
+  .kavidhai-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.5),
+      0 0 35px rgba(232, 202, 111, 0.5),
+      inset 0 0 20px rgba(232, 202, 111, 0.3) !important;
+  }
+
+  /* Filigree Inner Line for Kavidhai Card */
+  .kavidhai-card::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 6px !important;
+    bottom: 6px !important;
+    left: 6px !important;
+    right: 6px !important;
+    border: 1px dashed rgba(232, 202, 111, 0.4) !important;
+    border-radius: 15px !important;
+    pointer-events: none !important;
+    padding: 0 !important;
+    background: none !important;
+    mask-composite: normal !important;
   }
 
   .kavidhai-text {
-    font-size: 14px !important;
-    line-height: 1.7 !important;
+    font-family: 'Mukta Malar', 'Catamaran', 'Segoe UI', serif !important;
+    font-size: 16px !important;
+    line-height: 2 !important;
+    color: #fff6d6 !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
   }
-}
 
-/* ==========================================
+  .kavidhai-text .line.highlight {
+    font-family: 'Cinzel', 'Playfair Display', serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #e8ca6f !important;
+    background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: 2px !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+    filter: drop-shadow(0 2px 6px rgba(232, 202, 111, 0.5)) !important;
+  }
+
+  .kavidhai-text .line.signature {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 24px !important;
+    color: #ff758f !important;
+    display: inline-block !important;
+    margin-top: 8px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+  }
+
+  /* ==========================================
+   PREMIUM RIGHT-CORNER MUSIC PLAYER STYLES
+   ========================================== */
+  #musicPlayer {
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    z-index: 99999 !important;
+    background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
+    border: 2px solid #e8ca6f !important;
+    border-radius: 35px !important;
+    padding: 8px 14px 8px 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(232, 202, 111, 0.35) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    color: #fff6d6 !important;
+  }
+
+  #musicPlayer:hover {
+    transform: translateY(-3px) !important;
+    box-shadow:
+      0 14px 35px rgba(0, 0, 0, 0.5),
+      0 0 28px rgba(232, 202, 111, 0.6) !important;
+  }
+
+  .music-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .music-note-icon {
+    color: #e8ca6f;
+    font-size: 14px;
+  }
+
+  .song-title {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff6d6;
+    letter-spacing: 1px;
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #musicPlayer button {
+    background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
+    color: #1b261d !important;
+    border: none !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.25s ease !important;
+    padding: 0 !important;
+  }
+
+  #musicPlayer button:hover {
+    transform: scale(1.1) !important;
+    background: #ffffff !important;
+    color: #1b261d !important;
+    box-shadow: 0 0 15px rgba(232, 202, 111, 0.8) !important;
+  }
+
+  #musicPlayer button:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Mobile responsive music player & kavidhai card adjustments */
+  @media (max-width: 768px) {
+    #musicPlayer {
+      bottom: 20px !important;
+      right: 15px !important;
+      padding: 6px 10px 6px 14px !important;
+      gap: 8px !important;
+    }
+
+    .song-title {
+      max-width: 80px;
+      font-size: 10px;
+    }
+
+    #musicPlayer button {
+      width: 32px !important;
+      height: 32px !important;
+      font-size: 11px !important;
+    }
+
+    .kavidhai-card {
+      padding: 25px 18px !important;
+    }
+
+    .kavidhai-text {
+      font-size: 14px !important;
+      line-height: 1.7 !important;
+    }
+  }
+
+  /* ==========================================
    GLOBAL OUT-OF-BOX TYPOGRAPHY ELEVATION
    ========================================== */
-section h3, 
-section h5, 
-.section-padding h3, 
-.section-padding h5, 
-.section-padding .header {
-  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
-  color: #372428 !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  text-shadow: 0 1px 2px rgba(232, 202, 111, 0.3) !important;
-}
+  section h3,
+  section h5,
+  .section-padding h3,
+  .section-padding h5,
+  .section-padding .header {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+    color: #372428 !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 1px 2px rgba(232, 202, 111, 0.3) !important;
+  }
 
-section p, 
-.section-padding p, 
-.section-padding p.intro {
-  font-family: 'Montserrat', sans-serif !important;
-  color: #5a4634 !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.5px !important;
-}
+  section p,
+  .section-padding p,
+  .section-padding p.intro {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #5a4634 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+  }
 
-/* ==========================================
+  /* ==========================================
    PREMIUM ROYAL WISHES SECTION STYLES
    ========================================== */
-.wishes-section {
-  padding: 60px 20px !important;
-  background: radial-gradient(circle at center, rgba(232, 202, 111, 0.12) 0%, transparent 70%) !important;
-  text-align: center !important;
+  .wishes-section {
+    padding: 60px 20px !important;
+    background: radial-gradient(circle at center, rgba(232, 202, 111, 0.12) 0%, transparent 70%) !important;
+    text-align: center !important;
+  }
+
+  .wishes-section h3 {
+    font-family: 'Cinzel', 'Playfair Display', serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #372428 !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 25px !important;
+    text-transform: uppercase !important;
+  }
+
+  .wishes-form {
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    padding: 30px 25px !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
+    border: 2px solid #e8ca6f !important;
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(232, 202, 111, 0.3),
+      inset 0 0 12px rgba(232, 202, 111, 0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .wishes-form input,
+  .wishes-form textarea {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(232, 202, 111, 0.5) !important;
+    color: #fff6d6 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .wishes-form input::placeholder,
+  .wishes-form textarea::placeholder {
+    color: rgba(255, 246, 214, 0.55) !important;
+  }
+
+  .wishes-form input:focus,
+  .wishes-form textarea:focus {
+    border-color: #e8ca6f !important;
+    box-shadow: 0 0 12px rgba(232, 202, 111, 0.6) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+  }
+
+  #submitWishBtn {
+    background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
+    color: #1b261d !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    border-radius: 25px !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 5px !important;
+  }
+
+  #submitWishBtn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(232, 202, 111, 0.6) !important;
+    background: #ffffff !important;
+    color: #1b261d !important;
+  }
+
+  .wish-card {
+    border-radius: 18px !important;
+    padding: 2px !important;
+    background: linear-gradient(135deg, #e8ca6f, #d3b56a, #aa820a) !important;
+    box-shadow: 0 8px 20px rgba(55, 36, 40, 0.12) !important;
+  }
+
+  .wish-card-inner {
+    background: linear-gradient(145deg, #fffbf7 0%, #f7efe2 100%) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    border: 1px solid rgba(232, 202, 111, 0.4) !important;
+  }
+
+  .wish-avatar {
+    background: linear-gradient(135deg, #1b261d, #29382b) !important;
+    border: 2px solid #e8ca6f !important;
+    color: #e8ca6f !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: 700 !important;
+  }
+
+
 }
-
-.wishes-section h3 {
-  font-family: 'Cinzel', 'Playfair Display', serif !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  color: #372428 !important;
-  letter-spacing: 2px !important;
-  margin-bottom: 25px !important;
-  text-transform: uppercase !important;
-}
-
-.wishes-form {
-  max-width: 480px !important;
-  margin: 0 auto !important;
-  padding: 30px 25px !important;
-  border-radius: 20px !important;
-  background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
-  border: 2px solid #e8ca6f !important;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(232, 202, 111, 0.3),
-    inset 0 0 12px rgba(232, 202, 111, 0.2) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 15px !important;
-}
-
-.wishes-form input,
-.wishes-form textarea {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1.5px solid rgba(232, 202, 111, 0.5) !important;
-  color: #fff6d6 !important;
-  font-family: 'Montserrat', sans-serif !important;
-  border-radius: 12px !important;
-  padding: 12px 16px !important;
-  font-size: 14px !important;
-  outline: none !important;
-  transition: all 0.3s ease !important;
-}
-
-.wishes-form input::placeholder,
-.wishes-form textarea::placeholder {
-  color: rgba(255, 246, 214, 0.55) !important;
-}
-
-.wishes-form input:focus,
-.wishes-form textarea:focus {
-  border-color: #e8ca6f !important;
-  box-shadow: 0 0 12px rgba(232, 202, 111, 0.6) !important;
-  background: rgba(255, 255, 255, 0.14) !important;
-}
-
-#submitWishBtn {
-  background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
-  color: #1b261d !important;
-  font-family: 'Cinzel', serif !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  border-radius: 25px !important;
-  padding: 12px 24px !important;
-  border: none !important;
-  cursor: pointer !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
-  transition: all 0.3s ease !important;
-  margin-top: 5px !important;
-}
-
-#submitWishBtn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 22px rgba(232, 202, 111, 0.6) !important;
-  background: #ffffff !important;
-  color: #1b261d !important;
-}
-
-.wish-card {
-  border-radius: 18px !important;
-  padding: 2px !important;
-  background: linear-gradient(135deg, #e8ca6f, #d3b56a, #aa820a) !important;
-  box-shadow: 0 8px 20px rgba(55, 36, 40, 0.12) !important;
-}
-
-.wish-card-inner {
-  background: linear-gradient(145deg, #fffbf7 0%, #f7efe2 100%) !important;
-  border-radius: 16px !important;
-  padding: 16px 20px !important;
-  border: 1px solid rgba(232, 202, 111, 0.4) !important;
-}
-
-.wish-avatar {
-  background: linear-gradient(135deg, #1b261d, #29382b) !important;
-  border: 2px solid #e8ca6f !important;
-  color: #e8ca6f !important;
-  font-family: 'Cinzel', serif !important;
-  font-weight: 700 !important;
-}
-
-
-
-
-
