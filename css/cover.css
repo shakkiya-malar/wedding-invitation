@@ -1,0 +1,956 @@
+/* ==========================================
+   BI-FOLD INVITATION COVER OVERLAY STYLES
+   ========================================== */
+
+/* Prevent scrolling while cover is active */
+body.cover-locked {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+/* Fullscreen Overlay Container */
+#invitation-cover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  perspective: 1600px;
+  overflow: hidden;
+  background-color: transparent;
+  transition: opacity 0.5s ease 0.6s, visibility 0s 1.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#invitation-cover-overlay.cover-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* 3D Door Wrappers */
+.cover-doors-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+/* Left and Right Door Flaps */
+.cover-door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f7efe2;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0%, rgba(240,225,200,0.2) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='240' viewBox='0 0 160 240'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c87a74' fill-opacity='0.28'%3E%3Cpath d='M80 30c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5zM40 130c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5zM120 130c-12-15-30-10-35 5s10 25 35 45c25-20 40-30 35-45s-23-20-35-5z'/%3E%3C/g%3E%3Cg fill='%236b8e61' fill-opacity='0.28'%3E%3Cpath d='M80 80c-20 10-30 30-20 45s30 0 20-45zm-40 10c-15 8-22 22-15 33s22 0 15-33zm80 0c-15 8-22 22-15 33s22 0 15-33z'/%3E%3C/g%3E%3Cg fill='%23b8860b' fill-opacity='0.18'%3E%3Ccircle cx='80' cy='30' r='5'/%3E%3Ccircle cx='40' cy='130' r='5'/%3E%3Ccircle cx='120' cy='130' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 270px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.07, 1);
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(70, 45, 15, 0.15);
+}
+
+.left-door {
+  left: 0;
+  transform-origin: left center;
+  border-right: 2px solid #b8860b;
+}
+
+.right-door {
+  right: 0;
+  transform-origin: right center;
+  border-left: 2px solid #b8860b;
+}
+
+/* Door Inner Frame & Ornate Gold Borders */
+.door-border-frame {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border: 3px double #d4af37;
+  outline: 1px solid rgba(184, 134, 11, 0.5);
+  outline-offset: -8px;
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.2);
+  pointer-events: none;
+}
+
+.left-door .door-border-frame {
+  margin-right: 8px;
+}
+
+.right-door .door-border-frame {
+  margin-left: 8px;
+}
+
+/* Gold Corner Accents */
+.door-border-frame::before,
+.door-border-frame::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #d4af37;
+}
+
+.door-border-frame::before {
+  top: 4px;
+  left: 4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.door-border-frame::after {
+  bottom: 4px;
+  right: 4px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Corner filigree SVG decorations */
+.corner-filigree {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  fill: #b8860b;
+  opacity: 0.85;
+}
+
+.corner-top-left { top: 12px; left: 12px; }
+.corner-top-right { top: 12px; right: 12px; transform: scaleX(-1); }
+.corner-bottom-left { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.corner-bottom-right { bottom: 12px; right: 12px; transform: scale(-1); }
+
+/* Center Shadow Effect along the fold split */
+.left-door::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.25), transparent);
+  pointer-events: none;
+}
+
+.right-door::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.25), transparent);
+  pointer-events: none;
+}
+
+/* Central Badge / Metallic Seal */
+.cover-seal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000;
+  cursor: pointer;
+  perspective: 1000px;
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  user-select: none;
+}
+
+.cover-seal-wrapper:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.cover-seal-wrapper:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+/* Metallic Badge Shape & Frame */
+.cover-seal-badge {
+  position: relative;
+  min-width: 290px;
+  padding: 22px 35px;
+  background: linear-gradient(145deg, #1b261d 0%, #29382b 45%, #152017 100%);
+  border: 3px solid #d4af37;
+  border-radius: 50px / 30px;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    inset 0 -3px 6px rgba(0,0,0,0.8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Filigree Outer Shield Frame for Seal */
+.cover-seal-frame {
+  position: absolute;
+  top: -16px;
+  bottom: -16px;
+  left: -20px;
+  right: -20px;
+  pointer-events: none;
+  border: 2px dashed rgba(212, 175, 55, 0.6);
+  border-radius: 60px / 40px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Badge Metallic Shimmer Effect */
+.cover-seal-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 235, 170, 0.25) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  animation: metallicShimmer 3.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes metallicShimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  20% { transform: translateX(100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Badge Typography */
+.seal-top-text {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #e5c158;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.seal-main-title {
+  font-family: 'Playfair Display', 'Cinzel', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff6d6;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+  margin: 6px 0;
+  white-space: nowrap;
+}
+
+.seal-main-title span.weds {
+  font-family: 'Great Vibes', 'Brush Script MT', cursive;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: lowercase;
+  -webkit-text-fill-color: #e2b747;
+  margin: 0 6px;
+}
+
+.seal-action-button {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+  color: #1a251d;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.6);
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.seal-action-button i {
+  font-size: 12px;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), inset 0 1px 2px rgba(255,255,255,0.6);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.9), inset 0 1px 2px rgba(255,255,255,0.8);
+    transform: scale(1.04);
+  }
+}
+
+/* OPENED STATE ANIMATIONS */
+#invitation-cover-overlay.cover-opened .left-door {
+  transform: rotateY(-110deg);
+}
+
+#invitation-cover-overlay.cover-opened .right-door {
+  transform: rotateY(110deg);
+}
+
+#invitation-cover-overlay.cover-opened .cover-seal-wrapper {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Floating Re-Open Button on Main Website */
+.cover-reopen-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 9999;
+  background: linear-gradient(135deg, #1b261d, #29382b);
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.cover-reopen-btn:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.4);
+  background: #d4af37;
+  color: #1b261d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cover-seal-badge {
+    min-width: 240px;
+    padding: 18px 24px;
+  }
+  
+  .seal-main-title {
+    font-size: 18px;
+  }
+  
+  .seal-main-title span.weds {
+    font-size: 16px;
+  }
+  
+  .seal-top-text {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  
+  .seal-action-button {
+    font-size: 9px;
+    padding: 5px 14px;
+  }
+}
+
+/* ==========================================
+   PREMIUM SCRATCH CARD SECTION STYLES
+   ========================================== */
+#scratch-card {
+  padding: 60px 0;
+  background: radial-gradient(circle at center, rgba(232, 202, 111, 0.12) 0%, transparent 70%);
+}
+
+#scratch-card .header {
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #372428;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+#scratch-card p {
+  font-family: 'Montserrat', sans-serif;
+  color: #8c6d1f;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.scratch-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.scratch-container {
+  position: relative;
+  width: 320px;
+  max-width: 90vw;
+  height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fffaf4 0%, #fdf3e7 50%, #f7efe2 100%);
+  border: 3px solid #e8ca6f;
+  box-shadow: 
+    0 12px 30px rgba(55, 36, 40, 0.15),
+    0 0 20px rgba(232, 202, 111, 0.4),
+    inset 0 0 10px rgba(232, 202, 111, 0.25);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-sizing: border-box;
+}
+
+.scratch-container.celebrate-glow {
+  animation: celebratePulse 1.5s infinite alternate;
+}
+
+@keyframes celebratePulse {
+  0% {
+    box-shadow: 0 12px 30px rgba(55, 36, 40, 0.15), 0 0 20px rgba(232, 202, 111, 0.6);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 16px 40px rgba(232, 202, 111, 0.9), 0 0 35px rgba(211, 181, 106, 1);
+    transform: scale(1.03);
+  }
+}
+
+.hidden-date {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: linear-gradient(135deg, #fffbf7 0%, #f7efe2 100%) !important;
+  color: #372428 !important;
+  border-radius: 13px !important;
+  padding: 12px 15px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  border: 1px solid rgba(232, 202, 111, 0.4) !important;
+}
+
+.hidden-date .date-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d3b56a;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hidden-date .date-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: #372428;
+  letter-spacing: 1px;
+  margin: 3px 0;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(232, 202, 111, 0.3);
+}
+
+.hidden-date .date-day {
+  font-family: 'Great Vibes', cursive;
+  font-size: 22px;
+  color: #e8ca6f;
+  margin-top: 2px;
+}
+
+#scratchCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  cursor: grab;
+  z-index: 2;
+  transition: opacity 0.8s ease;
+}
+
+#scratchCanvas:active {
+  cursor: grabbing;
+}
+
+/* ==========================================
+   PREMIUM ROYAL COUNTDOWN TIMER STYLES
+   ========================================== */
+.countdown-row {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.count-box {
+  position: relative;
+  background: linear-gradient(145deg, #1b261d 0%, #2a3b2d 60%, #152017 100%) !important;
+  color: #fff6d6 !important;
+  padding: 20px 12px !important;
+  margin: 0 !important;
+  border-radius: 16px !important;
+  text-align: center !important;
+  border: 2px solid #e8ca6f !important;
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(232, 202, 111, 0.3),
+    inset 0 0 12px rgba(232, 202, 111, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden;
+}
+
+.count-box:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 
+    0 16px 35px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(232, 202, 111, 0.6),
+    inset 0 0 15px rgba(232, 202, 111, 0.3) !important;
+}
+
+/* Inner Gold Accent Line */
+.count-box::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border: 1px dashed rgba(232, 202, 111, 0.4);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.count-box h2 {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) !important;
+  letter-spacing: 1px !important;
+}
+
+.count-box p {
+  font-family: 'Cinzel', serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  margin: 6px 0 0 0 !important;
+  letter-spacing: 2px !important;
+  color: #d3b56a !important;
+  text-transform: uppercase !important;
+}
+
+/* Mobile responsive countdown adjustments */
+@media (max-width: 768px) {
+  .countdown-row {
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .count-box {
+    padding: 14px 6px !important;
+    border-radius: 12px !important;
+  }
+  
+  .count-box h2 {
+    font-size: 24px !important;
+  }
+  
+  .count-box p {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+    margin-top: 3px !important;
+  }
+/* ==========================================
+   PREMIUM ROYAL KAVIDHAI CARD STYLES
+   ========================================== */
+/* ==========================================
+   PREMIUM ROYAL KAVIDHAI CARD STYLES
+   ========================================== */
+.kavidhai-heading {
+  text-align: center !important;
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #372428 !important;
+  -webkit-text-fill-color: #372428 !important;
+  background: none !important;
+  margin-bottom: 25px !important;
+  text-shadow: 0 1px 2px rgba(232, 202, 111, 0.4) !important;
+}
+
+.kavidhai-heading::after {
+  content: "" !important;
+  display: block !important;
+  width: 100px !important;
+  height: 2px !important;
+  margin: 10px auto 0 !important;
+  background: linear-gradient(90deg, transparent, #e8ca6f, #d3b56a, transparent) !important;
+  box-shadow: 0 0 8px rgba(232, 202, 111, 0.8) !important;
+}
+
+.kavidhai-section {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 20px 15px 50px 15px !important;
+}
+
+.kavidhai-card {
+  position: relative !important;
+  max-width: 520px !important;
+  width: 100% !important;
+  padding: 40px 30px !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, #1b261d 0%, #29382b 50%, #152017 100%) !important;
+  border: 2px solid #e8ca6f !important;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(232, 202, 111, 0.3),
+    inset 0 0 15px rgba(232, 202, 111, 0.2) !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.kavidhai-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(232, 202, 111, 0.5),
+    inset 0 0 20px rgba(232, 202, 111, 0.3) !important;
+}
+
+/* Filigree Inner Line for Kavidhai Card */
+.kavidhai-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 6px !important;
+  bottom: 6px !important;
+  left: 6px !important;
+  right: 6px !important;
+  border: 1px dashed rgba(232, 202, 111, 0.4) !important;
+  border-radius: 15px !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+  background: none !important;
+  mask-composite: normal !important;
+}
+
+.kavidhai-text {
+  font-family: 'Mukta Malar', 'Catamaran', 'Segoe UI', serif !important;
+  font-size: 16px !important;
+  line-height: 2 !important;
+  color: #fff6d6 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+.kavidhai-text .line.highlight {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #e8ca6f !important;
+  background: linear-gradient(to bottom, #ffffff 0%, #f3d078 60%, #c49a37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  letter-spacing: 2px !important;
+  display: inline-block !important;
+  margin-top: 10px !important;
+  filter: drop-shadow(0 2px 6px rgba(232, 202, 111, 0.5)) !important;
+}
+
+.kavidhai-text .line.signature {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 24px !important;
+  color: #ff758f !important;
+  display: inline-block !important;
+  margin-top: 8px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ==========================================
+   PREMIUM RIGHT-CORNER MUSIC PLAYER STYLES
+   ========================================== */
+#musicPlayer {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  z-index: 99999 !important;
+  background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
+  border: 2px solid #e8ca6f !important;
+  border-radius: 35px !important;
+  padding: 8px 14px 8px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(232, 202, 111, 0.35) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  color: #fff6d6 !important;
+}
+
+#musicPlayer:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 
+    0 14px 35px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(232, 202, 111, 0.6) !important;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.music-note-icon {
+  color: #e8ca6f;
+  font-size: 14px;
+}
+
+.song-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff6d6;
+  letter-spacing: 1px;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#musicPlayer button {
+  background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
+  color: #1b261d !important;
+  border: none !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+  padding: 0 !important;
+}
+
+#musicPlayer button:hover {
+  transform: scale(1.1) !important;
+  background: #ffffff !important;
+  color: #1b261d !important;
+  box-shadow: 0 0 15px rgba(232, 202, 111, 0.8) !important;
+}
+
+#musicPlayer button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Mobile responsive music player & kavidhai card adjustments */
+@media (max-width: 768px) {
+  #musicPlayer {
+    bottom: 20px !important;
+    right: 15px !important;
+    padding: 6px 10px 6px 14px !important;
+    gap: 8px !important;
+  }
+  
+  .song-title {
+    max-width: 80px;
+    font-size: 10px;
+  }
+  
+  #musicPlayer button {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 11px !important;
+  }
+
+  .kavidhai-card {
+    padding: 25px 18px !important;
+  }
+
+  .kavidhai-text {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* ==========================================
+   GLOBAL OUT-OF-BOX TYPOGRAPHY ELEVATION
+   ========================================== */
+section h3, 
+section h5, 
+.section-padding h3, 
+.section-padding h5, 
+.section-padding .header {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+  color: #372428 !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 2px rgba(232, 202, 111, 0.3) !important;
+}
+
+section p, 
+.section-padding p, 
+.section-padding p.intro {
+  font-family: 'Montserrat', sans-serif !important;
+  color: #5a4634 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* ==========================================
+   PREMIUM ROYAL WISHES SECTION STYLES
+   ========================================== */
+.wishes-section {
+  padding: 60px 20px !important;
+  background: radial-gradient(circle at center, rgba(232, 202, 111, 0.12) 0%, transparent 70%) !important;
+  text-align: center !important;
+}
+
+.wishes-section h3 {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #372428 !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 25px !important;
+  text-transform: uppercase !important;
+}
+
+.wishes-form {
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  padding: 30px 25px !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, #1b261d 0%, #29382b 60%, #152017 100%) !important;
+  border: 2px solid #e8ca6f !important;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(232, 202, 111, 0.3),
+    inset 0 0 12px rgba(232, 202, 111, 0.2) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+
+.wishes-form input,
+.wishes-form textarea {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(232, 202, 111, 0.5) !important;
+  color: #fff6d6 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.wishes-form input::placeholder,
+.wishes-form textarea::placeholder {
+  color: rgba(255, 246, 214, 0.55) !important;
+}
+
+.wishes-form input:focus,
+.wishes-form textarea:focus {
+  border-color: #e8ca6f !important;
+  box-shadow: 0 0 12px rgba(232, 202, 111, 0.6) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+}
+
+#submitWishBtn {
+  background: linear-gradient(135deg, #e8ca6f 0%, #aa820a 100%) !important;
+  color: #1b261d !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  border-radius: 25px !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  margin-top: 5px !important;
+}
+
+#submitWishBtn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(232, 202, 111, 0.6) !important;
+  background: #ffffff !important;
+  color: #1b261d !important;
+}
+
+.wish-card {
+  border-radius: 18px !important;
+  padding: 2px !important;
+  background: linear-gradient(135deg, #e8ca6f, #d3b56a, #aa820a) !important;
+  box-shadow: 0 8px 20px rgba(55, 36, 40, 0.12) !important;
+}
+
+.wish-card-inner {
+  background: linear-gradient(145deg, #fffbf7 0%, #f7efe2 100%) !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
+  border: 1px solid rgba(232, 202, 111, 0.4) !important;
+}
+
+.wish-avatar {
+  background: linear-gradient(135deg, #1b261d, #29382b) !important;
+  border: 2px solid #e8ca6f !important;
+  color: #e8ca6f !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+}
+
+
+
+
+
