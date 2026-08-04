@@ -7,9 +7,10 @@
 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Shakkiya & Malar getting married!</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,51 +51,107 @@
         }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/cover.css">
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
+        onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body id="top">
-<!--[if lt IE 8]>
+
+<body id="top" class="cover-locked">
+    <!-- Royal Bi-Fold Invitation Cover Overlay -->
+    <div id="invitation-cover-overlay">
+        <div class="cover-doors-container">
+            <!-- Left Door Flap -->
+            <div class="cover-door left-door">
+                <div class="door-border-frame">
+                    <!-- SVG Filigree Corner Ornaments -->
+                    <svg class="corner-filigree corner-top-left" viewBox="0 0 100 100">
+                        <path d="M0,0 L100,0 C70,15 50,30 40,50 C30,70 15,70 0,100 L0,0 Z" />
+                        <circle cx="30" cy="30" r="8" fill="#d4af37" />
+                    </svg>
+                    <svg class="corner-filigree corner-bottom-left" viewBox="0 0 100 100">
+                        <path d="M0,0 L100,0 C70,15 50,30 40,50 C30,70 15,70 0,100 L0,0 Z" />
+                        <circle cx="30" cy="30" r="8" fill="#d4af37" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Right Door Flap -->
+            <div class="cover-door right-door">
+                <div class="door-border-frame">
+                    <!-- SVG Filigree Corner Ornaments -->
+                    <svg class="corner-filigree corner-top-right" viewBox="0 0 100 100">
+                        <path d="M0,0 L100,0 C70,15 50,30 40,50 C30,70 15,70 0,100 L0,0 Z" />
+                        <circle cx="30" cy="30" r="8" fill="#d4af37" />
+                    </svg>
+                    <svg class="corner-filigree corner-bottom-right" viewBox="0 0 100 100">
+                        <path d="M0,0 L100,0 C70,15 50,30 40,50 C30,70 15,70 0,100 L0,0 Z" />
+                        <circle cx="30" cy="30" r="8" fill="#d4af37" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Center Metallic Seal / Badge -->
+            <div class="cover-seal-wrapper" id="cover-seal" title="Click to Open Invitation">
+                <div class="cover-seal-frame"></div>
+                <div class="cover-seal-badge">
+                    <div class="seal-top-text">Wedding Invitation</div>
+                    <div class="seal-main-title">
+                        Shakkiya <span class="weds">weds</span> Malar
+                    </div>
+                    <div class="seal-action-button">
+                        <i class="fa fa-envelope-open-o"></i> Tap to Open
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-<section class="hero">
-    <section class="navigation">
-        <header>
-            <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
-                <div class="header-nav">
-                    <nav>
-                        <ul class="primary-nav">
-                            <!-- <li><a href="#intro">How we met</a></li> -->
-                            <!-- <li><a href="#events">Events</a></li>
+    <section class="hero">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                                <!-- <li><a href="#intro">How we met</a></li> -->
+                                <!-- <li><a href="#events">Events</a></li>
                             <li><a href="#instagram">Instagram</a></li> -->
-                            <li><a href="#eng-pics">Engagement</a></li>
-                            <!-- <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li> -->
-                        </ul>
-                        <ul class="member-actions">
-                            <li><a href="#map" class="login">Venue</a></li>
-                            <!-- <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li> -->
-                        </ul>
-                    </nav>
+                                <li><a href="#eng-pics">Engagement</a></li>
+                                <!-- <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li> -->
+                            </ul>
+                            <ul class="member-actions">
+                                <li><a href="#map" class="login">Venue</a></li>
+                                <!-- <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
                 </div>
-                <div class="navicon">
-                    <a class="nav-toggle" href="#"><span></span></a>
-                </div>
-            </div>
-        </header>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <!-- <div class="hero-content text-center">
+            </header>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- <div class="hero-content text-center">
                     <!--<h1>Ram and Antara</h1>-->
                     <!-- <img src="img/logo.jpg"> -->
                     <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
@@ -108,85 +165,85 @@
                                                            class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
             <div class="col-sm-4 hidden-xs"></div> -->
         </div>
-    </div>
-    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
-</section>
+        </div>
+        <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+    </section>
 
-<section id="invitation" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>✨Shakkiya & Malar✨</p>
-                <h3>We are getting married</h3>
-                <!-- <p>The dates are 22<sup>nd</sup> & 23<sup>rd</sup> of August '26 and we would like you to be a part of
+    <section id="invitation" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>✨Shakkiya & Malar✨</p>
+                    <h3>We are getting married</h3>
+                    <!-- <p>The dates are 22<sup>nd</sup> & 23<sup>rd</sup> of August '26 and we would like you to be a part of
                     it.</p> -->
-                <!-- <div class="share-bar"></div> -->
+                    <!-- <div class="share-bar"></div> -->
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section id="scratch-card" class="section-padding text-center">
+    </section>
+    <section id="scratch-card" class="section-padding text-center">
 
-    <div class="container">
+        <div class="container">
 
-        <h5 class="header">
-            Scratch to Reveal the Wedding Date
-        </h5>
-        <p>
-            ✨ A surprise awaits you ✨
-        </p>
-        <div class="scratch-wrapper">
+            <h5 class="header">
+                Scratch to Reveal the Wedding Date
+            </h5>
+            <p>
+                ✨ A surprise awaits you ✨
+            </p>
+            <div class="scratch-wrapper">
 
-            <div class="scratch-container">
+                <div class="scratch-container">
 
-                <div class="hidden-date">
+                    <div class="hidden-date">
+                        <div class="date-subtitle">Save The Date</div>
+                        <div class="date-main">23 AUGUST 2026</div>
+                        <div class="date-day">✨ Sunday ✨</div>
+                    </div>
 
-                    23 August 2026
+                    <canvas id="scratchCanvas" width="340" height="180">
+                    </canvas>
 
                 </div>
 
-                <canvas id="scratchCanvas" width="320" height="170">
-                </canvas>
-
             </div>
 
         </div>
 
-    </div>
+    </section>
+    <div class="row countdown-row">
 
-</section>
-<div class="row countdown-row">
-
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="count-box">
-            <h2 id="days">0</h2>
-            <p>Days</p>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="count-box">
+                <h2 id="days">0</h2>
+                <p>Days</p>
+            </div>
         </div>
-    </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="count-box">
-            <h2 id="hours">0</h2>
-            <p>Hours</p>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="count-box">
+                <h2 id="hours">0</h2>
+                <p>Hours</p>
+            </div>
         </div>
-    </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="count-box">
-            <h2 id="minutes">0</h2>
-            <p>Minutes</p>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="count-box">
+                <h2 id="minutes">0</h2>
+                <p>Minutes</p>
+            </div>
         </div>
-    </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="count-box">
-            <h2 id="seconds">0</h2>
-            <p>Seconds</p>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="count-box">
+                <h2 id="seconds">0</h2>
+                <p>Seconds</p>
+            </div>
         </div>
-    </div>
 
-</div>
-<!-- <section id="intro">
+    </div>
+    <!-- <section id="intro">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -214,7 +271,7 @@
     </div>
 </section> -->
 
-<!-- <section class="events section-padding" id="events">
+    <!-- <section class="events section-padding" id="events">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -267,7 +324,7 @@
                 </a>
             </div>
         </div> -->
-        <!--<div class="row">
+    <!--<div class="row">
             <div class="col-xs-12 section-border section-padding">
             </div>
         </div>-->
@@ -315,134 +372,142 @@
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->-->
+    </div><!-- /.modal -->
+    <br><br>
+    <p class="kavidhai-heading">A Kavidhai for the Couple 💛</p>
 
-</section> -->
-<br><br>
-<p class="kavidhai-heading">A Kavidhai for the Couple 💛</p>
+    <section id="kavidhaiSection" class="kavidhai-section">
 
-<section id="kavidhaiSection" class="kavidhai-section">
-    
 
-    <div class="kavidhai-card">
+        <div class="kavidhai-card">
 
-        <p class="kavidhai-text">
-        
-            <span class="line" style="--d:0.5s">என் சகோதரனின் வாழ்க்கையில் வந்து தேவதையாகிய</span><br>
-            <span class="line" style="--d:1s">மலர்கொடியே!</span><br><br>
-        
-            <span class="line" style="--d:1.5s">அண்ணனின் காதல் மனதைத் திறந்த மந்திரவாதியே!</span><br><br>
-        
-            <span class="line" style="--d:2s">உம் மலர் போன்ற மனதினால் எம் சகோதரனின்</span><br>
-            <span class="line" style="--d:2.5s">மனதைக் கட்டிப்போட்ட மாயாவியே!</span><br><br>
-        
-            <span class="line" style="--d:3s">உம் பெயர் போல் தங்கள் அகத்திணை வாழ்க்கை</span><br>
-            <span class="line" style="--d:3.5s">கொடிப் போன்று உயர்ந்துப் பறக்க எம் வாழ்த்துக்கள்!</span><br><br>
-        
-            <span class="line highlight" style="--d:4s">வாழ்க வளமுடன்!</span><br>
-            <span class="line signature" style="--d:4.5s">ஹர்ஷனா ஸ்ரீ ❤️</span>
-        
-        </p>
+            <p class="kavidhai-text">
 
-        <div class="sparkles"></div>
+                <span class="line" style="--d:0.5s">என் சகோதரனின் வாழ்க்கையில் வந்து தேவதையாகிய</span><br>
+                <span class="line" style="--d:1s">மலர்கொடியே!</span><br><br>
 
-    </div>
+                <span class="line" style="--d:1.5s">அண்ணனின் காதல் மனதைத் திறந்த மந்திரவாதியே!</span><br><br>
 
-</section>
-<section id="instagram" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>A picture is worth a thousand words!</h3>
-                <p>Help us capture the moment, tag your photos with the hashtag
-                    <a href="https://instagram.com/explore/tags/shakkiyamalar/" target="_blank">#shakkiyamalar</a>
-                </p>
-            </div>
+                <span class="line" style="--d:2s">உம் மலர் போன்ற மனதினால் எம் சகோதரனின்</span><br>
+                <span class="line" style="--d:2.5s">மனதைக் கட்டிப்போட்ட மாயாவியே!</span><br><br>
+
+                <span class="line" style="--d:3s">உம் பெயர் போல் தங்கள் அகத்திணை வாழ்க்கை</span><br>
+                <span class="line" style="--d:3.5s">கொடிப் போன்று உயர்ந்துப் பறக்க எம் வாழ்த்துக்கள்!</span><br><br>
+
+                <span class="line highlight" style="--d:4s">வாழ்க வளமுடன்!</span><br>
+                <span class="line signature" style="--d:4.5s">ஹர்ஷனா ஸ்ரீ ❤️</span>
+
+            </p>
+
+            <div class="sparkles"></div>
+
         </div>
-        <!-- <div class="row section-border wp7">
+
+    </section>
+    <section id="instagram" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3>A picture is worth a thousand words!</h3>
+                    <p>Help us capture the moment, tag your photos with the hashtag
+                        <a href="https://instagram.com/explore/tags/shakkiyamalar/" target="_blank">#shakkiyamalar</a>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="row section-border wp7">
             <div class="col-md-4 col-md-offset-4">
                 <img src="img/iphone_instagram.jpg">
             </div>
         </div> -->
-    </div>
-</section>
+        </div>
+    </section>
 
-<section id="eng-pics" class="section-padding">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">Engagement Pics</h3>
+    <section id="eng-pics" class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="header">Engagement Pics</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3233.JPG">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3233.JPG" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3036.JPG">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3036.JPG" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3269.JPG">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3269.JPG" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3262 B.jpg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3262 B.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3219.JPG">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3219.JPG" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/DSC_3279.JPG">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/DSC_3279.JPG" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class=" col-md-2">
+                    <a class="fancybox" rel="group" href="img/eng_pics/proposal.jpeg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/proposal.jpeg" alt="" />
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/image1.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/image1.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/image2.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/image2.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/family.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/family.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/white.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/white.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/me.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/me.jpeg" alt=""/>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-2">
-                <a class="fancybox" rel="group" href="img/eng_pics/proposal.jpeg">
-                    <div class="img-wrap">
-                        <div class="overlay">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <img src="img/eng_pics/proposal.jpeg" alt=""/>
-                    </div>
-                </a>
+        <div class="container">
+            <div class="row hidden-lg hidden-md hidden-xs">
+                <div class="col-xs-12 section-border section-padding"></div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row hidden-lg hidden-md hidden-xs">
-            <div class="col-xs-12 section-border section-padding"></div>
-        </div>
-    </div>
-    <!--<div class="row">
+        <!--<div class="row">
         <div class="col-md-12">
             <div class="diamond floating-logo">
                 <img src="img/sketch-logo.png" alt="Sketch Logo">
@@ -450,23 +515,23 @@
             </div>
         </div>
     </div>-->
-</section>
-<section class="wishes-section">
+    </section>
+    <section class="wishes-section">
 
-    <h3>💌 Send Your Wishes</h3>
+        <h3>💌 Send Your Wishes</h3>
 
-    <form id="wishForm" class="wishes-form">
-    <input type="text" id="name" placeholder="Your Name" />
-    <textarea id="message" placeholder="Your Wishes"></textarea>
+        <form id="wishForm" class="wishes-form">
+            <input type="text" id="name" placeholder="Your Name" />
+            <textarea id="message" placeholder="Your Wishes"></textarea>
 
-    <button type="button" id="submitWishBtn">Send 💖</button>
+            <button type="button" id="submitWishBtn">Send 💖</button>
 
-</form>
-    <div class="wishes-list" id="wishesList"></div>
-<p id="wishStatus" class="wish-status"></p>
+        </form>
+        <div class="wishes-list" id="wishesList"></div>
+        <p id="wishStatus" class="wish-status"></p>
 
-</section>
-<!-- <section id="video-bg" class="hidden-sm hidden-xs">
+    </section>
+    <!-- <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
          data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
     </div>
@@ -476,73 +541,75 @@
     </div>
 </section> -->
 
-<section id="map" class="section-padding">
-    <div class="text-center">
-        <h3>How do I get there?</h3>
-        <p>It's way easier than you think!</p>
-    </div>
-    <div id="map-canvas"></div>
-    <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Anil Kalyana Mandapam</h5>
-                            <p>CQVV+QCW, Kaliappa Nagar, Sivakasi, Tamil Nadu 626123</p>
+    <section id="map" class="section-padding">
+        <div class="text-center">
+            <h3>How do I get there?</h3>
+            <p>It's way easier than you think!</p>
+        </div>
+        <div id="map-canvas"></div>
+        <div id="map-content-wrapper" class="container pointer-events-none">
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                    <div class="text-center">
+                        <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                            <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
                         </div>
-                        <!-- <div class="col-md-6">
+                    </div>
+                    <div id="map-content" class="pointer-events-auto">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Anil Kalyana Mandapam</h5>
+                                <p>CQVV+QCW, Kaliappa Nagar, Sivakasi, Tamil Nadu 626123</p>
+                            </div>
+                            <!-- <div class="col-md-6">
                             <h5>Mr. Amit Roy</h5>
                             <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
                                 <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
                         </div> -->
-                    </div>
-                    <div class="row text-center">
-                        
-                        <div class="col-md-6" style="padding: 5px;">
-                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
-                                map</a>
                         </div>
-                        <div class="text-center" style="margin-top: 30px;">
-                        
-                            <a href="https://www.google.com/maps?q=Anil+Kalyana+Mandapam+Sivakasi" target="_blank" class="btn btn-fill btn-large">
-                        
-                                Get Directions
-                        
-                            </a>
-                        
+                        <div class="row text-center">
+
+                            <div class="col-md-6" style="padding: 5px;">
+                                <a class="btn btn-accent btn-small" id="btn-show-map"><i
+                                        class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                                    map</a>
+                            </div>
+                            <div class="text-center" style="margin-top: 30px;">
+
+                                <a href="https://www.google.com/maps?q=Anil+Kalyana+Mandapam+Sivakasi" target="_blank"
+                                    class="btn btn-fill btn-large">
+
+                                    Get Directions
+
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="rsvp text-center" id="rsvp">
+    <section class="rsvp text-center" id="rsvp">
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We are glad to see you join us on our big day.</p>
-                        <div id="add-to-cal"></div>
+        <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                        </button>
+                        <div class="section-padding">
+                            <h3>Thank you!</h3>
+                            <p>We are glad to see you join us on our big day.</p>
+                            <div id="add-to-cal"></div>
+                        </div>
                     </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
-    <!-- <div class="container">
+        <!-- <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
@@ -595,51 +662,60 @@
             </div>
         </div>
     </div> -->
-</section>
-<div id="musicPlayer">
+    </section>
+    <div id="musicPlayer" title="Wedding Music Player">
+        <div class="music-info">
+            <i class="fa fa-music music-note-icon pulse2"></i>
+            <span id="songName" class="song-title">Wedding Music</span>
+        </div>
+        <button id="playPauseBtn" title="Play/Pause Music"><i class="fa fa-play"></i></button>
+        <button id="skipBtn" title="Next Song"><i class="fa fa-step-forward"></i></button>
+    </div>
 
-    <button id="playPauseBtn">▶</button>
-    <button id="skipBtn">⏭</button>
-
-</div>
-
-<audio id="bgMusic"></audio>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center content">
-                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                <p>Crafted by Shakkiya with lots of <span class="fa fa-heart pulse2"></span> for Malar</p>
+    <audio id="bgMusic"></audio>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center content">
+                    <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                    <p>Crafted by Shakkiya with lots of <span class="fa fa-heart pulse2"></span> for Malar</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
-<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.mb.YTPlayer.min.js"></script>
-<script src="js/vendor/ouical.js"></script>
-<script src="js/scripts.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script async defer
+    </footer>
+    <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="js/vendor/ouical.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
-<!-- Google Analytics -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-46465113-4', 'auto');
-    ga('send', 'pageview');
-</script>
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-46465113-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Floating Re-Open Cover Button -->
+    <button id="reopen-cover-btn" class="cover-reopen-btn" style="display: none;" title="View Invitation Cover">
+        <i class="fa fa-envelope-o"></i> View Cover
+    </button>
+
+    <script src="js/cover.js"></script>
 </body>
+
 </html>
